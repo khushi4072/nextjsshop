@@ -1,0 +1,142 @@
+ .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .products-section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .products-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .product-card {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 30%;
+        text-align: center;
+    }
+
+    .product-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .product-card p {
+        color: #666;
+    }
+
+    .btn {
+        background-color: #0070f3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #005bb5;
+    }
+
+    .contact-section {
+        margin-bottom: 60px;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input,
+    .textarea {
+        margin-bottom: 20px;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .submit-btn {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 250px;
+            margin: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .product-image {
+            width: 100%;
+            /* height: auto; */
+            border-radius: 5px;
+        }
+    
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    @media screen and (max-width: 768px) {
+        .products-list {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    
+
+

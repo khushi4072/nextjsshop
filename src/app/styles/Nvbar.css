@@ -1,0 +1,114 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 24px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #333;
+}
+
+.search-bar {
+    position: relative;
+    display: none;
+}
+
+.search-bar input {
+    border: 1px solid #ddd;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.icon {
+    color: #666;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #333;
+}
+
+.icon .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon svg {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Optional: Add more specific styling for the SVG */
+.icon svg:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+.search-bar {
+    display: none;
+    /* Hide by default */
+}
+
+@media (min-width: 768px) {
+    .search-bar {
+        display: block;
+        /* Show on medium screens */
+    }
+}

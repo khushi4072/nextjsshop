@@ -2,7 +2,7 @@
 import '../styles/Shop.css';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Shop() {
   const [productsData, setProductsData] = useState([]);
 
@@ -40,6 +40,7 @@ export default function Shop() {
           {productsData.map((product, index) => (
             <div key={product._id} className="product-card">
               <div className="image-container">
+                <Link href={`/Shop/${product._id}`}>
                 <Image
                   src={product.image} // Use product's own image
                   alt={product.name}
@@ -48,11 +49,12 @@ export default function Shop() {
                   className="product-image"
                   onError={() => handleImageError(index)} // Set default image on error
                 />
+                </Link>
               </div>
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <p>
-                <strong>Category:</strong> {product.category}
+                <strong>Category:</strong> {product.category}s
               </p>
               <p>
                 <strong>Stock:</strong>{' '}

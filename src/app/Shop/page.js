@@ -11,10 +11,24 @@ export default function Shop() {
   }, []);
 
   async function getProductData() {
-    const response = await fetch('/api/Products');
-    const data = await response.json();
-    setProductsData(data);
+    try {
+      const response = await fetch('/api/Products');
+      const data = await response.json();
+      console.log("Fetched Data:", data); // Debugging
+  
+      // Ensure data is an array before setting state
+      if (Array.isArray(data)) {
+        setProductsData(data);
+      } else {
+        console.error("Data is not an array:", data);
+        setProductsData([]); // Set empty array to prevent crash
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      setProductsData([]); // Set empty array to prevent crash
+    }
   }
+  
 
   // Function to handle image error for a specific product
   const handleImageError = (index) => {

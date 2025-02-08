@@ -1,23 +1,18 @@
-import product from '../../../../database/model/Products'
-import {MONGODB_URI} from '../../../../database/connection'
-import mongoose from 'mongoose';
-import {NextResponse} from'next/server'
+import product from '../../../../database/model/Products';
+import { connectDB } from '../../../../database/connection';
+import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        await mongoose.connect(MONGODB_URI);
-        console.log('Fetching products');
+        await connectDB(); // Ensure DB is connected
+        console.log('✅ Connected to MongoDB');
+        
         const products = await product.find({});
-        console.log(product,'ooooo')
+        console.log('✅ Fetched products:', products);
+        
         return NextResponse.json(products);
     } catch (error) {
-        return NextResponse.json({ message: 'Error fetching products', error }, { status: 500 });
-    }
+        console.error('❌ Error fetching products:', error);
+        return NextResponse.json({ message: 'Error fetching products', error: error.message }, { status: 500 });
+    } 
 }
-
-// const app = express();
-
-
-// app.use('/api', router);
-
-
